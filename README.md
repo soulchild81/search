@@ -18,11 +18,11 @@ Request Param
 | 'size'  | X | Integer | 한페이지에 보여질 문서 수 default 10 |
 
 Response
-| Name |                     | Type | Description |
+| Name |                      Type | Description |
 |---|:---:|---:|
-| return_code |              | String | 리턴 코드 (API 의 결과 코드 Constant.RESULT_CODE 내에 기술) |
-| message     |              | String | API 상태 메세지                                        |
-| message_type|              | String | API 상태 코드                                         |
+| return_code |               String | 리턴 코드 (API 의 결과 코드 Constant.RESULT_CODE 내에 기술) |
+| message     |               String | API 상태 메세지                                        |
+| message_type|               String | API 상태 코드                                         |
 | data        |                       | API 데이터 오브젝트|
 | data.pager  |                       | 페이징 데이터 정보| 
 | data.list[] |                       | 블로그 검색 리스트|
