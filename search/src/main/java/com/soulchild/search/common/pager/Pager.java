@@ -16,9 +16,6 @@ public class Pager {
     @JsonProperty("page_size")
     private int pageSize;
 
-    @JsonProperty("set_size")
-    private int setSize;
-
     @JsonProperty("first_page")
     private int firstPage;
 

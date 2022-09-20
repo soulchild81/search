@@ -66,9 +66,9 @@ public class SearchController {
     @GetMapping("/popular/keyword")
     @SearchApi
     @ApiOperation(value="인기검색어 top 10 조회", notes="인기검색어 조회 ")
-    public SearchResult<List<PopularKeywordDto>> popularKeyword(){
+    public SearchResult<PagerList<PopularKeywordDto>> popularKeyword(){
         // 인기 검색어 조회
-        List<PopularKeywordDto> list = popularKeywordService.getPopularList(Constant.SEARCH_SIZE);
+        PagerList<PopularKeywordDto> list = popularKeywordService.getPopularList(Constant.SEARCH_SIZE);
         return new SearchResult<>(list);
     }
 

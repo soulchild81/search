@@ -4,6 +4,8 @@ import com.soulchild.search.api.entity.PopularKeyword;
 import com.soulchild.search.api.model.PopularKeywordDto;
 import com.soulchild.search.api.repository.PopularRepository;
 import com.soulchild.search.api.service.PopularKeywordService;
+import com.soulchild.search.common.pager.Pager;
+import com.soulchild.search.common.pager.PagerList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -46,15 +48,21 @@ public class PopularKeywordServiceImpl implements PopularKeywordService {
     }
 
     @Override
-    public List<PopularKeywordDto> getPopularList(int size){
-        PageRequest req = PageRequest.of(0, size , Sort.by("count").descending());
-        Page<PopularKeyword> list = popularRepository.findByOrderByCountDesc(req);
-
+    public PagerList<PopularKeywordDto> getPopularList(int size){
         List<PopularKeywordDto> popularList = new ArrayList<>();
-        if(!list.getContent().isEmpty()){
-            popularList = list.getContent().stream().map(PopularKeywordDto::new).collect(Collectors.toList());
+        int total = 0;
+        try{
+            PageRequest req = PageRequest.of(0, size , Sort.by("count").descending());
+            Page<PopularKeyword> list = popularRepository.findByOrderByCountDesc(req);
+            total = list.getSize();
+            if(!list.getContent().isEmpty()){
+                popularList = list.getContent().stream().map(PopularKeywordDto::new).collect(Collectors.toList());
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
 
-        return popularList;
+        PagerList list = PagerList.builder().list(popularList).pager(new Pager(1, total , 10)).build();
+        return list;
     }
 }
