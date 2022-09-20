@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:h2:~/test
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  h2:
+    console:
+      enabled: true
+      path: /h2_console
+      settings:
+        trace: false
+        web-allow-others: false
+
+search:
+  kakao-access-token: KakaoAK 26866d3e33a8fbc777cdf5b6709d814c
+  naver-client-id: ctKh3a86Ot6RVp_iG2ZZ
+  naver-client-secret: 2B1y7NtsBQ
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL
+        connecttimeout: 3000
+        readtimeout: 3000
+      search:
+        kakao:
+          url: https://dapi.kakao.com/v2/search
+        naver:
+          url: https://openapi.naver.com/v1/search
