@@ -36,7 +36,8 @@ Response
 ####  - DESCRIPTION : 인기검색어 TOP 10 조회
 ####  - Authentication : false
 
-Request Param. NONE
+Request Param
+<br>NONE
 
 Response
 | Name | Type | Description |
