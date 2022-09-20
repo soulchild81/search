@@ -1,4 +1,4 @@
-### search
+## search
  - 블로그 검색  , 인기검색어 조회 API 입니다.
  - jar 다운로드 경로 : https://drive.google.com/uc?export=download&id=1LoRNSL9YbJZpTAt82ZRd0yl267-jQcmM
  - 추가 구현 사항 
@@ -34,6 +34,7 @@ Response
 | `data.list[].blog_title`     | String | 블로그 제목|
 | `data.list[].blog_url`       | String | 블로그 상세 URL |
 | `data.list[].post_date`      | String | 블로그 작성일자 [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss].000+[tz]|
+
 
 ####  - URI : /search/v1/popular/keyword
 ####  - HTTP METHOD : GET
