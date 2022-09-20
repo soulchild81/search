@@ -2,9 +2,9 @@
  - 블로그 검색  , 인기검색어 조회 API 입니다.
  - jar 다운로드 경로 : https://drive.google.com/uc?export=download&id=1LoRNSL9YbJZpTAt82ZRd0yl267-jQcmM
  - 추가 구현 사항 
-   API 테스트를 위한 swagger 추가 : http://localhost:8080/swagger-ui.html --> 스웨거 페이지를 통한 API 테스트
-   카카오 블로그 검색 API에 장애가 발생한 경우, 네이버 블로그 검색 API를 통해 데이터 제공 --> Exception 발생시 네이버 API 로 대체
-   동시성 이슈가 발생할 수 있는 부분을 염두에 둔 구현 (예시. 키워드 별로 검색된 횟수의 정확도) --> select ~for update 로 레코드에 Lock을 걸고 데이터 조회후 업데이트
+   1. API 테스트를 위한 swagger 추가 : http://localhost:8080/swagger-ui.html --> 스웨거 페이지를 통한 API 테스트
+   2. 카카오 블로그 검색 API에 장애가 발생한 경우, 네이버 블로그 검색 API를 통해 데이터 제공 --> Exception 발생시 네이버 API 로 대체
+   3. 동시성 이슈가 발생할 수 있는 부분을 염두에 둔 구현 (예시. 키워드 별로 검색된 횟수의 정확도) --> select ~for update 로 레코드에 Lock을 걸고 데이터 조회후 업데이트
 
 ## API 명세
 
