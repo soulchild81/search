@@ -9,12 +9,13 @@
 ### DESCRIPTION : 블로그 검색 API --> 쿼리를 파라미터로 하여 블로그를 검색 한다.
 ### Authentication : false
 
-### Request Param 
-### Parameter Required  Type   Description
-### query     O         String 요청 질의어
-### sort      X         String 정렬 파라미터 (accuracy : 정확도순, recency : 최신순)
-### page      X         int    페이지 번호 default 1
-### size      X         int    한페이지에 보여질 문서 수 default 10
+Request Param 
+| Parameter | Required | Type | Description |
+|---|:---:|---:|---:|
+| 'query' | O | String | 요청 질의어 |
+| 'sort'  | X | String | 정렬 파라미터 (accuracy : 정확도순, recency : 최신순) |
+| 'page'  | X | int    | 페이지 번호 default 1 |
+| 'size'  | X | int    | 한페이지에 보여질 문서 수 default 10 |
 
 ### Response
 ### Name                        Type    Description
