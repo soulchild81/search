@@ -1,4 +1,7 @@
 spring:
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml
   datasource:
     url: jdbc:h2:~/test
     username: sa

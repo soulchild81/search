@@ -29,9 +29,7 @@ public class Constant {
         SUCCESS(0, "성공하였습니다."),
         INVALID_PARAMS(100, "잘못된 파라미터입니다."),
         INVALID_ACCESS(101, "잘못된 접근입니다."),
-        NONE_QUERY(102, "검색어가 존재하지 않습니다."),
-        LONG_QUERY(103, "검색어의 길이가 30자 이상입니다."),
-        NONE_RESULT(104, "검색결과가 존재하지 않습니다."),
+        NONE_RESULT(102, "조회 결과가 존재하지 않습니다."),
         NOT_LOGGED(200, "로그인 후 이용할 수 있습니다."),
         CONNECTION_ERROR(300,"통신에 실패 했습니다."),
         UNKNOWN_ERROR(1000 , "오류가 발생하였습니다.");

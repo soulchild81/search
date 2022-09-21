@@ -3,8 +3,10 @@ package com.soulchild.search.common.pager;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Pager {
+public class Pager implements Serializable {
 
     @JsonProperty("remain_count")
     private int remainCount;

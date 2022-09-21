@@ -7,6 +7,7 @@ import com.soulchild.search.api.service.PopularKeywordService;
 import com.soulchild.search.common.pager.Pager;
 import com.soulchild.search.common.pager.PagerList;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -48,6 +49,7 @@ public class PopularKeywordServiceImpl implements PopularKeywordService {
     }
 
     @Override
+    @Cacheable(value="PopularKeywordCache", key = "'popular_keyword_cache'")
     public PagerList<PopularKeywordDto> getPopularList(int size){
         List<PopularKeywordDto> popularList = new ArrayList<>();
         int total = 0;

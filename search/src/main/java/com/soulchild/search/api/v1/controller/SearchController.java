@@ -69,6 +69,11 @@ public class SearchController {
     public SearchResult<PagerList<PopularKeywordDto>> popularKeyword(){
         // 인기 검색어 조회
         PagerList<PopularKeywordDto> list = popularKeywordService.getPopularList(Constant.SEARCH_SIZE);
+        List<PopularKeywordDto> dtoList = (List<PopularKeywordDto>)list.getList();
+        if(dtoList.isEmpty()){
+            throw new SearchException(Constant.RESULT_CODE.NONE_RESULT);
+        }
+
         return new SearchResult<>(list);
     }
 

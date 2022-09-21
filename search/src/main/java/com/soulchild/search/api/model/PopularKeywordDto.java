@@ -3,10 +3,11 @@ package com.soulchild.search.api.model;
 import com.soulchild.search.api.entity.PopularKeyword;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class PopularKeywordDto {
+public class PopularKeywordDto implements Serializable {
     private int id;
     private String popular_keyword;
     private int count;
