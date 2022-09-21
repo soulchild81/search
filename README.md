@@ -5,7 +5,9 @@
    1. API 테스트를 위한 swagger 추가 : http://localhost:8080/swagger-ui.html --> 스웨거 페이지를 통한 API 테스트
    2. 카카오 블로그 검색 API에 장애가 발생한 경우, 네이버 블로그 검색 API를 통해 데이터 제공 --> Exception 발생시 네이버 API 로 대체
    3. 동시성 이슈가 발생할 수 있는 부분을 염두에 둔 구현 (예시. 키워드 별로 검색된 횟수의 정확도) --> select ~for update 로 레코드에 Lock을 걸고 데이터 조회후 업데이트
-   4. 트래픽이 많고, 저장되어 있는 데이터가 많음을 염두에 둔 구현 --> ehcache 추가로 데이터를 캐시로 저장하여 DB의 부담을 최대한 줄이는 방향으로 처리 , 60초간의 expireTime 설정
+   4. 트래픽이 많고, 저장되어 있는 데이터가 많음을 염두에 둔 구현 --> /search/v1/popular/keyword API 상에 ehcache를 추가하여 데이터를 캐시에 저장 및 조회 하여 
+                                                        DB의 부담을 최대한 줄이는 방향으로 처리 , 60초간의 expireTime 설정
+
 
 ## API 명세
 
